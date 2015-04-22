@@ -14,8 +14,8 @@ Servo right;
 
 pinMode(laserpin, OUTPUT);
 pinMode(LEDpin, OUTPUT);
-pinMode(trigpin, INPUT);
-pinMode(echopin, OUTPUT);
+pinMode(trigpin, OUTPUT);
+pinMode(echopin, INPUT);
 pinMode(lpin, OUTPUT);
 pinMode(rpin, OUTPUT);
 left.attach(lpin);
