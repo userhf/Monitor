@@ -1,6 +1,12 @@
 # Monitor
 Runs an Arduino-powered, autonomous car, with large wheels, a gyroscope, LEDs, and a laser.
 
+//Basic outline of autonomous motion:
+/*
+forward until ultrasonic < 5
+next rotates until ultrasonic > 5
+*/
+
 #include <Servo.h>
 int laserpin = 13;
 int LEDpin = 12;
@@ -43,6 +49,19 @@ int howFar(){
   cm = duration / 58.2;
   
   return cm;
+}
+
+void forward(){
+  boolean up;
+  //read from gyroscope if up or not, and adjust up accordingly
+  if(up){
+    left.write(0);
+    right.write(0);
+  }
+  else{
+    left.write(180);
+    right.write(180);
+  }
 }
 
 void setup(){
