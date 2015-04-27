@@ -12,21 +12,6 @@ int rpin = 7;
 Servo left;
 Servo right;
 
-pinMode(laserpin, OUTPUT);
-pinMode(LEDpin, OUTPUT);
-pinMode(trigpin, OUTPUT);
-pinMode(echopin, INPUT);
-pinMode(lpin, OUTPUT);
-pinMode(rpin, OUTPUT);
-left.attach(lpin);
-right.attach(rpin);
-
-digitalWrite(laserpin, HIGH);
-digitalWrite(LEDpin, HIGH);
-digitalWrite(trigpin, LOW);
-left.write(90);
-right.write(90);
-
 int howFar(){
   int cm = 0;
   int duration = 0;
@@ -62,6 +47,22 @@ void forward(){
 }
 
 void setup(){
+  
+  pinMode(laserpin, OUTPUT);
+  pinMode(LEDpin, OUTPUT);
+  pinMode(trigpin, OUTPUT);
+  pinMode(echopin, INPUT);
+  pinMode(lpin, OUTPUT);
+  pinMode(rpin, OUTPUT);
+  left.attach(lpin);
+  right.attach(rpin);
+  
+  digitalWrite(laserpin, HIGH);
+  digitalWrite(LEDpin, HIGH);
+  digitalWrite(trigpin, LOW);
+  left.write(90);
+  right.write(90);
+  
   delay(5000);
 }
 
